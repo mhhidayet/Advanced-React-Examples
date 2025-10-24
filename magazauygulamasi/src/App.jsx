@@ -1,28 +1,28 @@
 import { createBrowserRouter, RouterProvider } from "react-router";
-import MainLayout from "./layouts/MainLayout";
-import HomePage from "./pages/HomePage";
-import ProductsPage from "./pages/ProductsPage";
-import LoginPage from "./pages/loginPage";
-import CartPage from "./pages/CartPage";
-import RegisterPage from "./pages/RegisterPage";
-import ProductsDetailPage from "./pages/ProductsDetailPage";
+import Main from "./layouts/Main";
+import Home from "./pages/Home";
+import Products from "./pages/Products";
+import Login from "./pages/Login";
+import Cart from "./pages/Cart";
+import Register from "./pages/Register";
+import ProductDetails from "./pages/ProductDetails";
 const router = createBrowserRouter(
   [
     {
-      path: "/", element: <MainLayout />,
+      path: "/", element: <Main />,
       children: [
-        { index: true, element: <HomePage /> },
-        { path: "home", element: <HomePage /> },
+        { index: true, element: <Home /> },
+        { path: "home", element: <Home /> },
         {
           path: "products",
           children: [
-            { index: true, element: <ProductsPage /> },
-            { path: ":id", element: <ProductsDetailPage /> },
+            { index: true, element: <Products /> },
+            { path: ":id", element: <ProductDetails /> },
           ],
         },
-        { path: "cart", element: <CartPage /> },
-        { path: "login", element: <LoginPage /> },
-        { path: "register", element: <RegisterPage /> },
+        { path: "cart", element: <Cart /> },
+        { path: "login", element: <Login /> },
+        { path: "register", element: <Register /> },
       ]
     },
   ]);
